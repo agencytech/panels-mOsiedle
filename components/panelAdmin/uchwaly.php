@@ -1,0 +1,1 @@
+<h1 class="text-lg font-bold">Uchwały</h1>
