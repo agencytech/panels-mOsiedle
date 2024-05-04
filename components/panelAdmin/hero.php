@@ -189,6 +189,24 @@
                 </a>
               </li>
               <li>
+                <a id="nav_button" onclick="openPanelSite('mieszkancy')" class="cursor-pointer mieszkancy text-gray-700 hover:bg-gray-100 group hover:text-gray-600 flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold duration-150">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-gray-600 duration-150">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                  </svg>
+
+                  Mieszkańcy
+                </a>
+              </li>
+              <li>
+                <a id="nav_button" onclick="openPanelSite('wnioski')" class="cursor-pointer wnioski text-gray-700 hover:bg-gray-100 group hover:text-gray-600 flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold duration-150">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-gray-600 duration-150">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12" />
+                  </svg>
+
+                  Wnioski o weryfikacje
+                </a>
+              </li>
+              <li>
                 <a id="nav_button" onclick="openPanelSite('mTablice')" class="cursor-pointer mTablice text-gray-700 hover:bg-gray-100 group hover:text-gray-600 flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold duration-150">
                   <svg class=" h-6 w-6 shrink-0 text-gray-400 group-hover:text-gray-600 duration-150" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5h3m-6.75 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-15a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 4.5v15a2.25 2.25 0 0 0 2.25 2.25Z" />

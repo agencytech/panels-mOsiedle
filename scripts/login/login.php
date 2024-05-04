@@ -1,10 +1,10 @@
 <?php
 include '../conn_db.php';
 
-$email_sha = hash('sha256', $_POST['email']);
+$email = $_POST['email'];
 $password_sha = hash('sha256', $_POST['password']);
 
-$sql = "SELECT users.fullName, users.id, users.role_id FROM users WHERE email = '".$email_sha."' AND password = '".$password_sha."'";
+$sql = "SELECT users.fullName, users.id, users.role_id FROM users WHERE email = '".$email."' AND password = '".$password_sha."'";
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) > 0)
 {
