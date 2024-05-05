@@ -4,7 +4,7 @@
             <h1 class="text-lg font-bold">Użytkownicy</h1>
             <p class="mt-2 text-sm text-gray-500">Lista wszystkich użytkowników serwisu mOsiedle.</p>
         </div>
-        <button class="flex md:mt-0 mt-4 justify-center rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold leading-6 text-white shadow-sm theme-bg-hover duration-150 theme-shadow-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">Dodaj użytkownika</button>
+        <button onclick="openPopupUsersAdd()" class="flex md:mt-0 mt-4 justify-center rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold leading-6 text-white shadow-sm theme-bg-hover duration-150 theme-shadow-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">Dodaj użytkownika</button>
     </div>
     <div class="mt-8 flow-root">
     <div class="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
@@ -28,7 +28,7 @@
                 while($row = mysqli_fetch_assoc($result))
                 {
                     echo '
-                    <tr class="hover:bg-gray-100 cursor-pointer" onclick="openPopupSchools('.$row['id'].')">
+                    <tr class="hover:bg-gray-100 cursor-pointer" onclick="openPopupUsers('.$row['id'].')">
                         <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">'.$row['fullName'].'</td>
                         <td class="whitespace-nowrap border-b border-gray-200 hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">'.$row['email'].'</td>
                         <td class="whitespace-nowrap border-b border-gray-200 hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">-</td>
@@ -44,3 +44,13 @@
     </div>
   </div>
 </section>
+<?php 
+$name_in_scripts = 'Users';
+$path = 'components/panelSuperAdmin/users_edit.php';
+include "../../components/popup.php";
+?>
+<?php 
+$name_in_scripts = 'UsersAdd';
+$path = 'components/panelSuperAdmin/users_add.php';
+include "../../components/popup.php";
+?>

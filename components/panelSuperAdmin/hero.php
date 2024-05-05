@@ -22,9 +22,7 @@
   </div>
 
   <div id="loading" class="hidden absolute pointer-events-none w-full mt-32 justify-center z-[999]">
-          <div class="z-[30] bg-black/90 p-4 rounded-full flex items-center justify-center">
-              <div class="lds-dual-ring"></div>
-          </div>
+          
   </div>
 
   <main class="py-10 lg:pl-72">
@@ -38,7 +36,7 @@
     function openPanelSite(site) {
     var body = document.getElementById("panelBody");
     var loading = document.getElementById("loading");
-    loading.style.display = "flex";
+    loading.innerHTML = "<div class='z-[30] bg-black/90 p-4 rounded-full flex items-center justify-center'><div class='lds-dual-ring'></div></div>";
     // body.innerHTML = "<div class='w-full flex items-center justify-center z-[999]'><div class='z-[30] bg-black/90 p-4 rounded-xl'><div class='lds-dual-ring'></div></div></div>";
     const url = "components/panelSuperAdmin/" + site + ".php";
     fetch(url)
@@ -66,7 +64,7 @@
     for(var i = 0; i < activeButtons.length; i++) {  
       activeButtons[i].classList.add("sidenav-button-active");
     }
-    loading.style.display = "none";
+    loading.innerHTML = "";
 }
 
 function executeScripts(parsedDocument) {

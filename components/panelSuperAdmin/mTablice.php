@@ -38,7 +38,7 @@
                         }
                     }
                     echo '
-                    <tr class="hover:bg-gray-100 cursor-pointer" onclick="openPopupSchools('.$row['id'].')">
+                    <tr class="hover:bg-gray-100 cursor-pointer" onclick="openPopupmTablica('.$row['id'].')">
                         <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
                             <p class="">'.$row['model'].'</p>
                             <p class="text-xs text-gray-500 -mt-1">'.$row['serial'].'</p>
@@ -57,3 +57,8 @@
     </div>
   </div>
 </section>
+<?php 
+$name_in_scripts = 'mTablica';
+$path = 'components/panelSuperAdmin/mtablica_edit.php';
+include "../../components/popup.php";
+?>

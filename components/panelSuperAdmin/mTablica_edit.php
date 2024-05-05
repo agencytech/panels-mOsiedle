@@ -1,0 +1,1 @@
+mTablica details edit combo
