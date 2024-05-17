@@ -1,5 +1,5 @@
 
-<div>
+<div class="min-h-screen">
   
   <?php include '../components/panelSuperAdmin/navbar_mobile.php'?>
 
@@ -9,7 +9,7 @@
     <?php include '../components/panelSuperAdmin/navbar.php'; ?>
   </div>
 
-  <div class="xl:hidden sticky top-0 z-40 bg-cover bg-fixed bg-center bg-no-repeat">
+  <div class="lg:hidden sticky top-0 z-40 bg-cover bg-fixed bg-center bg-no-repeat">
       <div class="flex h-16 shrink-0 items-center gap-x-6 border-b border-black/5  px-4 shadow-sm sm:px-6 lg:px-8">
         <button id="nav_m_open_button" type="button" class="-m-2.5 p-2.5 text-black">
           <span class="sr-only">Open sidebar</span>
@@ -17,7 +17,7 @@
             <path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
           </svg>
         </button>
-        <img src="public/img/logo_long_superadmin.svg" class="w-1/3" alt="">
+        <img src="public/img/logo_long_superadmin.svg" class="w-1/3 max-w-[150px]" alt="">
       </div>
   </div>
 
@@ -25,8 +25,8 @@
           
   </div>
 
-  <main class="py-10 lg:pl-72">
-    <div id="panelBody" class="px-4 sm:px-6 lg:px-8">
+  <main class="py-10 lg:pl-72 h-full">
+    <div id="panelBody" class="px-4 sm:px-6 lg:px-8 h-full">
       
     </div>
   </main>

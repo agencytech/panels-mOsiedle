@@ -4,7 +4,7 @@
             <h1 class="text-lg font-bold">mTablice</h1>
             <p class="mt-2 text-sm text-gray-500">Lista wszystkich mTablic stworzonych dla serwisu mOsiedle.</p>
         </div>
-        <button class="flex md:mt-0 mt-4 justify-center rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold leading-6 text-white shadow-sm theme-bg-hover duration-150 theme-shadow-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">Dodaj mTablicę</button>
+        <button onclick="openPopupmTablicaAdd()" class="flex md:mt-0 mt-4 justify-center rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold leading-6 text-white shadow-sm theme-bg-hover duration-150 theme-shadow-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">Dodaj mTablicę</button>
     </div>
     <div class="mt-8 flow-root">
     <div class="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
@@ -27,12 +27,19 @@
             {
                 while($row = mysqli_fetch_assoc($result))
                 {
+                    if ($row['wspolnota_id'] == 0) {
+                        $row['wspolnota_id'] = 'Brak';
+                    }
                     if ($row['warranty_start'] == NULL) {
                         $gwarancja = 'Brak danych';
                     }else {
-                        $liczba_dni = strtotime($row['warranty_end']) - strtotime(date("Y-m-d"));
+                        $liczba_dni = (strtotime($row['warranty_end']) - strtotime(date('Y-m-d'))) / (60 * 60 * 24);
                         if ($liczba_dni < 0) {
+                            if ($row['warranty_end'] == '0000-00-00' or $row['warranty_start'] == '0000-00-00') {
+                                $gwarancja = 'Brak danych';
+                            }else {
                             $gwarancja = 'Gwarancja wygasła';
+                            }
                         }else {
                             $gwarancja = 'Na gwarancji ('.$liczba_dni.' dni)';
                         }
@@ -59,6 +66,14 @@
 </section>
 <?php 
 $name_in_scripts = 'mTablica';
-$path = 'components/panelSuperAdmin/mtablica_edit.php';
+$delete_path = 'scripts/mTablice/delete.php';
+$path = 'components/panelSuperAdmin/mTablica_edit.php';
+include "../../components/popup.php";
+?>
+
+<?php 
+$name_in_scripts = 'mTablicaAdd';
+$delete_path = '';
+$path = 'components/panelSuperAdmin/mTablica_add.php';
 include "../../components/popup.php";
 ?>

@@ -21,7 +21,7 @@
           <tbody>
             <?php
             include "../../scripts/conn_db.php";
-            $sql = "SELECT users.id, users.fullName, users.email, roles.name FROM users JOIN roles ON users.role_id = roles.id where users.role_id != 5;";
+            $sql = "SELECT users.id, users.fullName, users.email, roles.name, users.communities FROM users JOIN roles ON users.role_id = roles.id where users.role_id != 5;";
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) > 0)
             {
@@ -31,7 +31,7 @@
                     <tr class="hover:bg-gray-100 cursor-pointer" onclick="openPopupUsers('.$row['id'].')">
                         <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">'.$row['fullName'].'</td>
                         <td class="whitespace-nowrap border-b border-gray-200 hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">'.$row['email'].'</td>
-                        <td class="whitespace-nowrap border-b border-gray-200 hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">-</td>
+                        <td class="whitespace-nowrap border-b border-gray-200 hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">'.$row['communities'].'</td>
                         <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500">'.$row['name'].'</td>
                     </tr>
                     ';
@@ -46,11 +46,13 @@
 </section>
 <?php 
 $name_in_scripts = 'Users';
+$delete_path = 'scripts/users/delete.php';
 $path = 'components/panelSuperAdmin/users_edit.php';
 include "../../components/popup.php";
 ?>
 <?php 
 $name_in_scripts = 'UsersAdd';
+$delete_path = '';
 $path = 'components/panelSuperAdmin/users_add.php';
 include "../../components/popup.php";
 ?>
