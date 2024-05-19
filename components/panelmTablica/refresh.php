@@ -2,7 +2,7 @@
 session_start();
 $wspolnota_id = $_SESSION['wspolnota_id'];
 include "../../scripts/conn_db.php";
-                    $sql = "SELECT id, title, text, created_at, expire_at, importance from announcements where communities = '$wspolnota_id' and (expire_at > now() or expire_at = '0000-00-00 00:00:00') order by created_at desc;";
+                    $sql = "SELECT id, title, text, created_at, expire_at, importance from announcements where communities = '$wspolnota_id' and (expire_at > now() or expire_at = '0000-00-00 00:00:00') order by importance asc, created_at desc;";
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result) > 0)
                     {
