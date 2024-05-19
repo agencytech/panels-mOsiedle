@@ -2,6 +2,9 @@
 $title = $_POST['title'];
 $text = $_POST['text'];
 $expire_at = $_POST['expire_at'];
+if ($expire_at == '') {
+    $expire_at = '0000-00-00 00:00:00';
+}
 $importance = $_POST['importance'];
 $id = $_POST['id'];
 
