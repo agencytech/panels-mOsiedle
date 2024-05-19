@@ -39,7 +39,7 @@ include "../../scripts/conn_db.php";
                             }else if($row['importance'] == 'Awaria'){
                                 echo 'border-red-600 border';
                             }else if($row['importance'] == 'Ważne'){
-                                echo 'border-ogrange-600 border';
+                                echo 'border-orange-600 border';
                             }
                             echo '">
                                 <span class="text-xl font-[poppins]">
@@ -63,7 +63,7 @@ include "../../scripts/conn_db.php";
                                         }else if($row['importance'] == 'Awaria'){
                                             echo 'text-red-600';
                                         }else if($row['importance'] == 'Ważne'){
-                                            echo 'text-ogrange-600';
+                                            echo 'text-orange-600';
                                         }else if($row['importance'] == 'Aktualność'){
                                             echo 'text-blue-600';
                                         }else if($row['importance'] == 'Mniej ważne'){
