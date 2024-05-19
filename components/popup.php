@@ -1,5 +1,5 @@
 
-<section id="popup<?=$name_in_scripts?>Bg" class="fixed z-[50] h-0 opacity-0 top-0 left-0 w-full h-full bg-[#00000051] transition-opacity duration-300"></section>
+<section id="popup<?=$name_in_scripts?>Bg" class="fixed backdrop-blur-sm z-[50] h-0 opacity-0 top-0 left-0 w-full h-full bg-[#00000051] transition-opacity duration-300"></section>
   <section id="popup<?=$name_in_scripts?>" onclick="popup<?=$name_in_scripts?>CloseConfirm()" class="z-[60] fixed scale-0 top-0 left-0 w-full h-full">
     <div class="flex items-center justify-center w-full h-full px-2">
       <div onclick="event.cancelBubble=true;" class="bg-white shadow-xl md:min-w-[400px] md:w-auto w-full max-w-[800px] max-h-[80vh] min-h-[20vh] overflow-y-auto flex flex-col items-center py-4 px-4 gap-4 rounded-[25px] sm:px-6  -xl">
@@ -18,7 +18,7 @@
     </div>
 </section>
 
-<section id="popup<?=$name_in_scripts?>CloseBg" class="fixed z-[65] h-0 opacity-0 top-0 left-0 w-full h-full bg-[#0000009e] transition-opacity duration-300"></section>
+<section id="popup<?=$name_in_scripts?>CloseBg" class="fixed z-[65] backdrop-blur-md h-0 opacity-0 top-0 left-0 w-full h-full bg-[#0000009e] transition-opacity duration-300"></section>
   <section id="popup<?=$name_in_scripts?>Close" onclick="popup<?=$name_in_scripts?>CloseConfirm()" class="z-[70] fixed scale-0 top-0 left-0 w-full h-full">
     <div class="flex items-center justify-center w-full h-full px-2">
       <div onclick="event.cancelBubble=true;" id="pupupFaqDeleteOutput">
@@ -53,7 +53,7 @@
     </div>
   </section>
 
-<section id="popup<?=$name_in_scripts?>DeleteBg" class="fixed z-[65] h-0 opacity-0 top-0 left-0 w-full h-full bg-[#0000009e] transition-opacity duration-300"></section>
+<section id="popup<?=$name_in_scripts?>DeleteBg" class="fixed z-[65] backdrop-blur-md	h-0 opacity-0 top-0 left-0 w-full h-full bg-[#0000009e] transition-opacity duration-300"></section>
   <section id="popup<?=$name_in_scripts?>Delete" onclick="popup<?=$name_in_scripts?>Delete()" class="z-[70] fixed scale-0 top-0 left-0 w-full h-full">
     <div class="flex items-center justify-center w-full h-full px-2">
       <div onclick="event.cancelBubble=true;" id="pupupFaqDeleteOutput">

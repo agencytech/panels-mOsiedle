@@ -9,6 +9,11 @@ $sql = "select count(id) from mtablice;";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 $mtablice = $row[0];
+
+$sql = "select count(id) from communities;";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+$wspolnoty = $row[0];
 ?>
 <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
       <div class="flex h-16 shrink-0 items-center">
@@ -44,7 +49,7 @@ $mtablice = $row[0];
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
                   </svg>
                   Wspólnoty
-                  <span class="ml-auto w-9 min-w-max whitespace-nowrap rounded-full bg-black/10 px-2.5 py-0.5 text-center text-xs font-medium leading-5 text-gray-500 " aria-hidden="true">-</span>
+                  <span class="ml-auto w-9 min-w-max whitespace-nowrap rounded-full bg-black/10 px-2.5 py-0.5 text-center text-xs font-medium leading-5 text-gray-500 " aria-hidden="true"><?=$wspolnoty?></span>
                 </a>
               </li>
               <li>

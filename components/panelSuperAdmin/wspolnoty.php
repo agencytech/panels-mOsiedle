@@ -4,23 +4,47 @@
             <h1 class="text-lg font-bold">Wspólnoty</h1>
             <p class="mt-2 text-sm text-gray-500">Wszystkie wspólnoty w systemie mOsiedle.</p>
         </div>
+        <button onclick="openPopupmTablicaAdd()" class="flex md:mt-0 mt-4 justify-center rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold leading-6 text-white shadow-sm theme-bg-hover duration-150 theme-shadow-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">Dodaj wspólnotę</button>
     </div>
     <div class="mt-8 flow-root">
     <div class="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
-      <div class="inline-block min-w-full py-2 align-middle mt-24">
-        <div class="text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="mx-auto h-12 w-12 text-gray-400">
-                <path stroke-linecap="round" vector-effect="non-scaling-stroke" stroke-linejoin="round" d="M15 13.5H9m4.06-7.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
-            </svg>
-
-            <h3 class="mt-2 text-sm font-semibold text-gray-900">Moduł powstanie wkrótce</h3>
-            <p class="mt-1 text-sm text-gray-500">Trwają pracę nad tym modułem, zostanie on dodany w przyszłości.</p>
-            <div class="mt-6">
-                <a href="mailto:gugisek@gmail.com" class="inline-flex items-center rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 hover:shadow-xl duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                Kontakt z developerem
-                </a>
-            </div>
-        </div>
+      <div class="inline-block min-w-full py-2 align-middle">
+        <table class="min-w-full border-separate border-spacing-0">
+          <thead>
+            <tr>
+              <th scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">ID</th>
+              <th scope="col" class="sticky top-0 z-10 hidden border-b border-gray-300 bg-white bg-opacity-75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter sm:table-cell">Nazwa</th>
+              <th scope="col" class="sticky top-0 z-10 hidden border-b border-gray-300 bg-white bg-opacity-75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter lg:table-cell">Ulica</th>
+              <th scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter">Miasto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            include "../../scripts/conn_db.php";
+            $sql = "SELECT id, name, street_name, city from communities;";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result) > 0)
+            {
+                while($row = mysqli_fetch_assoc($result))
+                {
+                    echo '
+                    <tr class="hover:bg-gray-100 cursor-pointer" onclick="openPopupmTablica('.$row['id'].')">
+                        <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
+                            <p class="">'.$row['id'].'</p>
+                        </td>
+                        <td class="whitespace-nowrap border-b border-gray-200 hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">'.$row['name'].'</td>
+                        <td class="whitespace
+                        -nowrap border-b border-gray-200 hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">'.$row['street_name'].'</td>
+                        <td class="whitespace
+                        -nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500">'.$row['city'].'</td>
+                    </tr>
+                    
+                    ';
+                }
+            }
+            ?>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

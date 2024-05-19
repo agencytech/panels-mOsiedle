@@ -1,7 +1,7 @@
 <?php
 $id = $_GET['id'];
 include "../../scripts/conn_db.php";
-$sql = "SELECT users.id, users.fullName, users.email, role_id FROM users where users.id = $id;";
+$sql = "SELECT users.id, users.fullName, users.email, role_id, communities FROM users where users.id = $id;";
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) > 0)
 {
@@ -12,6 +12,7 @@ if(mysqli_num_rows($result) > 0)
         $sur_name = explode(" ", $row['fullName'])[1];
         $email = $row['email'];
         $role_id = $row['role_id'];
+        $wspolnota_id = $row['communities'];
     }
 }
 ?>
@@ -75,6 +76,24 @@ if(mysqli_num_rows($result) > 0)
             <div class="mt-2">
                 <select name="wspolnoty" id="wspolnoty" type="text" placeholder="Wybierz wspólnoty" class="border rounded-full py-1.5 w-full px-4 text-sm border-gray-400 focus:ring-0 focus:outline-0 focus:bg-[#1c1c1c] focus:border-[#1c1c1c] focus:shadow-xl duration-150 font-medium focus:text-white">
                     <option value="">Wybierz wspólnoty</option>
+                    <?php
+                    $sql = "SELECT id, name FROM communities;";
+                    $result = mysqli_query($conn, $sql);
+                    if(mysqli_num_rows($result) > 0)
+                    {
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                            echo '<option 
+                            ';
+                            if ($wspolnota_id == $row['id']) {
+                                echo 'selected ';
+                            }
+                            echo '
+                            
+                             value="'.$row['id'].'">'.$row['name'].'</option>';
+                        }
+                    }
+                    ?>
                 </select>
             </div>
         </div>

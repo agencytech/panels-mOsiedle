@@ -1,8 +1,8 @@
 <section data-aos="fade-in" data-aos-delay="100" class="">
     <div class="flex md:flex-row flex-col justify-between items-center w-full">
         <div>
-            <h1 class="text-lg font-bold">Finanse</h1>
-            <p class="mt-2 text-sm text-gray-500">Zarządzaj finansami swojej wspólnoty w portalu mOsiedle.</p>
+            <h1 class="text-lg font-bold">Wnioski</h1>
+            <p class="mt-2 text-sm text-gray-500">Wszystkie wnioski o weryfikacje w Twojej wspólnocie w portalu mOsiedle.</p>
         </div>
     </div>
     <div class="mt-8 flow-root">

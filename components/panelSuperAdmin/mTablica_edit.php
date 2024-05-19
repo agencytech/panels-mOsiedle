@@ -97,6 +97,21 @@ if(mysqli_num_rows($result) > 0)
                     }
                     ?>
                     value="0">Brak</option>
+                    <?php
+                    $sql = "SELECT id, name FROM communities;";
+                    $result = mysqli_query($conn, $sql);
+                    if(mysqli_num_rows($result) > 0)
+                    {
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                            echo '<option ';
+                            if ($wspolnota_id == $row['id']) {
+                                echo 'selected ';
+                            }
+                            echo 'value="'.$row['id'].'">'.$row['name'].'</option>';
+                        }
+                    }
+                    ?>
                 </select>
             </div>
         </div>

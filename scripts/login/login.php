@@ -4,7 +4,7 @@ include '../conn_db.php';
 $email = $_POST['email'];
 $password_sha = hash('sha256', $_POST['password']);
 
-$sql = "SELECT users.fullName, users.id, users.role_id FROM users WHERE email = '".$email."' AND password = '".$password_sha."'";
+$sql = "SELECT users.fullName, users.id, users.role_id, communities FROM users WHERE email = '".$email."' AND password = '".$password_sha."'";
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) > 0)
 {
@@ -18,6 +18,7 @@ if(mysqli_num_rows($result) > 0)
     $_SESSION['user'] = $full_name;
     $_SESSION['user_id'] = $user_id;
     $_SESSION['role_id'] = $role_id;
+    $_SESSION['wspolnota_id'] = $row['communities'];
     $_SESSION['alert'] = 'Zalogowano pomyślnie.';
     $_SESSION['alert_type'] = 'success';
 

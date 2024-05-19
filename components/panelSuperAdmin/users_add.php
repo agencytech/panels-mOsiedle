@@ -55,6 +55,17 @@
             <div class="mt-2">
                 <select name="wspolnoty" id="wspolnoty" type="text" placeholder="Wybierz wspólnoty" class="border rounded-full py-1.5 w-full px-4 text-sm border-gray-400 focus:ring-0 focus:outline-0 focus:bg-[#1c1c1c] focus:border-[#1c1c1c] focus:shadow-xl duration-150 font-medium focus:text-white">
                     <option value="">Wybierz wspólnoty</option>
+                    <?php
+                    $sql = "SELECT id, name FROM communities;";
+                    $result = mysqli_query($conn, $sql);
+                    if(mysqli_num_rows($result) > 0)
+                    {
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                            echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+                        }
+                    }
+                    ?>
                 </select>
             </div>
         </div>

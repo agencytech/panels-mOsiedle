@@ -1,4 +1,28 @@
 <?php
+
+include "../scripts/conn_db.php";
+$sql = "select wspolnota_id, place_details from mtablice where user_id = ".$_SESSION['user_id'].";";
+$result = mysqli_query($conn, $sql);
+    while($row = mysqli_fetch_assoc($result)){
+        $wspolnota_id = $row['wspolnota_id'];
+        $place_details = $row['place_details'];
+    }
+
+    $_SESSION['wspolnota_id'] = $wspolnota_id;
+
+$sql = "select name, street_name, city from communities where id = $wspolnota_id";
+$result = mysqli_query($conn, $sql);
+    while($row = mysqli_fetch_assoc($result)){
+        $name = $row['name'];
+        $street_name = $row['street_name'];
+        $city = $row['city'];
+    }
+
+//rozdzielenie place datail które wygląda: klatka 2 na zmienne osobne: klatka, 2
+$place_details = explode(" ", $place_details);
+$place = $place_details[0];
+$number = $place_details[1];
+
 //ustawienie daty jako zmiennych
 $dzien = date("d");
 $miesiac = date("m");
@@ -166,7 +190,7 @@ switch ($dzienTygodnia) {
                         </div>
                     </div>
                 </div>
-                <div class="w-full h-full grid grid-cols-12 gap-12 row-span-3">
+                <div class="w-full h-full grid grid-cols-12 gap-12 row-span-3 mt-4">
                     <div class="neo_shadow h-full p-12 col-span-4 flex flex-col justify-between">
                         <span class="text-xs flex gap-2 items-center">przypięte
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.3" stroke="currentColor" class="w-3.5 h-3.5">
@@ -215,6 +239,9 @@ switch ($dzienTygodnia) {
                         </div>
                     </div>
                 </div>
+                <div id="refresh_body" class="duration-300 w-full h-full grid grid-cols-12 gap-12 row-span-3">
+                    
+                </div>
             </div>
         </section>
     </section>
@@ -223,17 +250,17 @@ switch ($dzienTygodnia) {
             <img src="public/img/logo_long.svg" alt="" class="w-[170px]">
             <div class="h-2/3 w-[1px] border-r border-gray-600"></div>
             <div>
-                <h1 class="font-bold text-2xl font-[poppins]">Osiedle Płochocińska Pod Dębami</h1>
+                <h1 class="font-bold text-2xl font-[poppins]"><?=$name?></h1>
                 <div class="-mt-2 text-gray-500 gap-4 flex items-center font-[poppins]">
-                    <span>Warszawa</span>
+                    <span><?=$city?></span>
                     <div class="h-[13px] w-[1px] border-r border-gray-500"></div>
-                    <span>ul. Płochocińska 16A/B/C</span>
+                    <span><?=$street_name?></span>
                 </div>
             </div>
         </div>
         <div class="flex items-center flex-col">
-            <h1 class="font-bold text-6xl font-[poppins]">2</h1>
-            <a href="scripts/login/logout.php" class="-mt-2 font-[poppins]">klatka</a>
+            <h1 class="font-bold text-6xl font-[poppins]"><?=$number?></h1>
+            <a href="scripts/login/logout.php" class="-mt-2 font-[poppins]"><?=$place?></a>
         </div>
     </footer>
 </div>
@@ -243,3 +270,17 @@ switch ($dzienTygodnia) {
     </svg>
     Wyloguj się
 </a> -->
+<script>
+    function refresh(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("refresh_body").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "components/panelmTablica/refresh.php", true);
+        xhttp.send();
+    }
+    setInterval(refresh, 10000);
+    refresh();
+</script>
