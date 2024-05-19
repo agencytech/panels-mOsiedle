@@ -43,9 +43,9 @@ include "../../scripts/conn_db.php";
                             }
                             echo '">
                                 <span class="text-xl font-[poppins]">
-                                    <b>'.$row['title'].'</b><br/>
-                                    '.$row['text'].'
-                                </span>
+                                    <b>'.$row['title'].'</b><br/></span>
+                                    <span class="text-sm">'.$row['text'].'</span>
+                                
                                 
                                 <div class="flex justify-between gap-4 font-[poppins] pt-8">
                                     <div class="flex items-center gap-4">
