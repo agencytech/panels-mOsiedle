@@ -12,7 +12,7 @@ if(isset($_SESSION['alert'])){
     $alert_name = "none";
   }
   echo '
-  <div id="alert" aria-live="assertive" class="active:scale-95 opacity-1 duration-300 pointer-events-none fixed z-50 inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6">
+  <div id="alert" aria-live="assertive" class="opacity-1 duration-300 pointer-events-none fixed z-50 inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6">
     <div class="flex w-full flex-col items-center space-y-4 sm:items-end">
       <div data-aos="fade-down" data-aos-anchor-placement="top-bottom" class="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-[#1c1c1c] shadow-lg ring-1 ring-black ring-opacity-5">
         <div class="p-4">
@@ -25,7 +25,7 @@ if(isset($_SESSION['alert'])){
               <p id="aler_desc" class="my-1 text-sm text-gray-300">'.$_SESSION['alert'].'</p>
             </div>
             <div class="ml-4 flex flex-shrink-0">
-              <button type="button" onclick="alertClose()" class="inline-flex rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+              <button type="button" onclick="alertClose()" class="inline-flex rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
                 <span class="sr-only">Close</span>
                   <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />

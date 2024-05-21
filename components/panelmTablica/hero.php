@@ -92,10 +92,10 @@ switch ($dzienTygodnia) {
         break;
 }
 ?>
-<div class="w-full py-8 px-12 h-screen flex flex-col justify-between overflow-y-hidden">
+<div class="w-full md:py-8 md:px-12 h-screen flex flex-col justify-between overflow-y-hidden">
     <section class="h-full">
         <nav class="flex justify-between items-center -mt-4">
-            <div class="flex gap-8 h-full items-center font-[poppins]">
+            <div class="md:scale-100 scale-50 flex gap-8 h-full items-center font-[poppins]">
                 <div>
                     <p class="text-sm text-right">Poniedziałek</p>
                     <div class="flex items-center gap-1">
@@ -127,7 +127,7 @@ switch ($dzienTygodnia) {
                     </div>
                 </div>
             </div>
-            <div class="mt-8 flex flex-col items-end justify-end font-[poppins]">
+            <div class="md:scale-100 scale-50 mt-8 flex flex-col items-end justify-end font-[poppins]">
                 <div>
                     <span class="text-5xl"><?=$dzien?></span>
                     <span class="text-4xl font-light"><?=$miesiac?></span>
@@ -138,8 +138,8 @@ switch ($dzienTygodnia) {
         </nav>
         <section class="h-full mt-12">
             <div class="w-full h-full grid grid-rows-12 gap-12">
-                <div class="w-full h-full grid grid-cols-8 gap-12 row-span-2">
-                    <div class="neo_shadow h-full p-12 col-span-5 flex flex-col justify-between border border-red-600">
+                <div class="w-full h-full grid grid-cols-8 md:gap-12 row-span-2">
+                    <div class="md:scale-100 scale-50 neo_shadow h-full p-12 col-span-5 flex flex-col justify-between border border-red-600">
                         <span class="text-2xl font-[poppins]">
                             Uwaga! W dniach 6-7.03.2024 zostanie przebudowana sieć wodociągowa w związku z czym woda zostanie wyłączona w godzinach 9-16.
                         </span>
@@ -247,10 +247,10 @@ switch ($dzienTygodnia) {
     </section>
     <footer class="w-full flex flex-row justify-between items-bottom -mt-20">
         <div class="flex items-center gap-8">
-            <img src="public/img/logo_long.svg" alt="" class="w-[170px]">
+            <img src="public/img/logo_long.svg" alt="" class="md:w-[170px]">
             <div class="h-2/3 w-[1px] border-r border-gray-600"></div>
             <div>
-                <h1 class="font-bold text-2xl font-[poppins]"><?=$name?></h1>
+                <h1 class="font-bold md:text-2xl font-[poppins] "><?=$name?></h1>
                 <div class="-mt-2 text-gray-500 gap-4 flex items-center font-[poppins]">
                     <span><?=$city?></span>
                     <div class="h-[13px] w-[1px] border-r border-gray-500"></div>
