@@ -80,7 +80,7 @@ include "../../scripts/conn_db.php";
                         }
                     }else{
                         echo '
-                        <div class="neo_shadow h-full p-8 col-span-6 flex flex-col justify-between border border-gray-200">
+                        <div class="neo_shadow h-full p-8 col-span-12 flex md:mx-[20%] flex-col justify-between border border-gray-200">
                             <div>
                             <span class="text-xl font-[poppins]">
                                 <b>Brak ogłoszeń</b><br/></span>
@@ -91,13 +91,13 @@ include "../../scripts/conn_db.php";
                                 <div class="flex items-center gap-2">
                                     <img src="public/img/user_profile.svg" alt="" class="w-[30px] shadow-xl rounded-full">
                                     <div class="flex flex-col">
-                                        <span class="text-gray-800 text-sm">Gustaw Sołdecki</span>
-                                        <span class="text-gray-500 text-xs -mt-2">Administrator lokalny</span>
+                                        <span class="text-gray-800 text-sm">System mOsiedle</span>
+                                        <span class="text-gray-500 text-xs -mt-1">Administrator systemowy</span>
                                     </div>
                                 </div>
                                 <div class="flex flex-col items-end">
-                                    <span class="text-xs">17 maja 2024</span>
-                                    <span class="text-sm text-gray-600">Informacja</span>
+                                    <span class="text-xs"></span>
+                                    <span class="text-xs text-gray-600">Informacja</span>
                                 </div>
                             </div>
                         </div>
