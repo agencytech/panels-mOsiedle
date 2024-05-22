@@ -2,7 +2,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portal dla uczniów i szkół ułatwiający odbywanie korepetycji!">
+    <meta name="description" content="Portal dla osiedli i wspólnot pomagający przekazywać najważniejsze informacje, zawsze aktualnie, zawsze od źródła.">
     <title>Panel | mOsiedle - portal dla Twojego osiedla</title>
     <meta name="theme-color" content="#0e0e0e" />
     <link rel="stylesheet" href="public/css/global.css">
