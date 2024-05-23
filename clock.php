@@ -6,7 +6,7 @@
         <div class="relative h-screen isolate overflow-hidden bg-black">
             <div class="h-screen flex items-center w-full justify-center">
                 <div class="flex flex-col items-center">
-                    <h2 id="clock" class="text-[220px] leading-[230px] text-white font-medium pr-20 items-center tracking-tight sm:text-12xl font-[poppins] flex flex-col">00:00</h2>
+                    <h2 id="clock" class="text-[220px] leading-[230px] text-white font-medium pr-24 items-center tracking-tight sm:text-12xl font-[poppins] flex flex-col">00:00</h2>
                     <!-- <p class="mx-auto mt-1 max-w-xl text-3xl text-gray-300">Czwartek</p> -->
                 </div>
             </div>
