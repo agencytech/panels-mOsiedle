@@ -263,8 +263,8 @@ switch ($dzienTygodnia) {
                 <h1 class="font-bold text-6xl font-[poppins]"><?=$number?></h1>
                 <a href="scripts/login/logout.php" class="-mt-2 font-[poppins]"><?=$place?></a>
             </div>
-            <div class="flex flex-col items-center ml-8">
-                <img src="public/img/qr.png" alt="" class="w-[80px] shadow-xl rounded-xl p-2">
+            <div class="flex flex-col items-center ml-10">
+                <img src="public/img/qr.png" alt="" class="w-[75px]">
                 <span class="text-xs text-gray-600 font-[poppins]">Dołącz do nas!</span>
             </div>
         </div>
