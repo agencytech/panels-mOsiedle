@@ -97,9 +97,9 @@ switch ($dzienTygodnia) {
         <nav class="flex justify-between items-center -mt-4">
             <div class="md:scale-100 scale-50 flex gap-8 h-full items-center font-[poppins]">
                 <div>
-                    <p class="text-sm text-right">Poniedziałek</p>
+                    <p class="text-sm text-right">Czwartek</p>
                     <div class="flex items-center gap-1">
-                        <span class="font-bold text-gray-700 text-6xl">27</span>
+                        <span class="font-bold text-gray-700 text-6xl">23</span>
                         <div class="flex flex-col items-end">
                             <span class="font-bold text-gray-500">o</span>
                             <span class="font-bold text-gray-500 -mt-2 text-2xl">C</span>
@@ -107,9 +107,9 @@ switch ($dzienTygodnia) {
                     </div>
                 </div>
                 <div>
-                    <p class="text-sm text-right">Wtorek</p>
+                    <p class="text-sm text-right">Piątek</p>
                     <div class="flex items-center gap-1">
-                        <span class="font-bold text-gray-700 text-6xl">24</span>
+                        <span class="font-bold text-gray-700 text-6xl">28</span>
                         <div class="flex flex-col items-end">
                             <span class="font-bold text-gray-500">o</span>
                             <span class="font-bold text-gray-500 -mt-2 text-2xl">C</span>
@@ -117,9 +117,9 @@ switch ($dzienTygodnia) {
                     </div>
                 </div>
                 <div>
-                    <p class="text-sm text-right">Środa</p>
+                    <p class="text-sm text-right">Sobota</p>
                     <div class="flex items-center gap-1">
-                        <span class="font-bold text-gray-700 text-6xl">21</span>
+                        <span class="font-bold text-gray-700 text-6xl">26</span>
                         <div class="flex flex-col items-end">
                             <span class="font-bold text-gray-500">o</span>
                             <span class="font-bold text-gray-500 -mt-2 text-2xl">C</span>
