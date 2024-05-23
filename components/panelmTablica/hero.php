@@ -258,10 +258,17 @@ switch ($dzienTygodnia) {
                 </div>
             </div>
         </div>
-        <div class="flex items-center flex-col">
-            <h1 class="font-bold text-6xl font-[poppins]"><?=$number?></h1>
-            <a href="scripts/login/logout.php" class="-mt-2 font-[poppins]"><?=$place?></a>
+        <div class="flex items-center">
+            <div class="flex items-center flex-col">
+                <h1 class="font-bold text-6xl font-[poppins]"><?=$number?></h1>
+                <a href="scripts/login/logout.php" class="-mt-2 font-[poppins]"><?=$place?></a>
+            </div>
+            <div class="flex flex-col items-center ml-8">
+                <img src="public/img/qr.png" alt="" class="w-[80px] shadow-xl rounded-xl p-2">
+                <span class="text-xs text-gray-600 font-[poppins]">Dołącz do nas!</span>
+            </div>
         </div>
+        
     </footer>
 </div>
 <!-- <a href="scripts/login/logout.php" class="text-gray-700 border-t border-[0.5] border-gray-100 group cursor-pointer duration-150 hover:bg-gray-100 flex items-center px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">
