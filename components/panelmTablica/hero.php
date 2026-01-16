@@ -138,7 +138,7 @@ switch ($dzienTygodnia) {
         </nav>
         <section class="h-full mt-12">
             <div class="w-full h-full grid grid-rows-12 gap-12">
-                <div class="w-full h-full grid grid-cols-8 md:gap-12 row-span-2">
+                <!-- <div class="w-full h-full grid grid-cols-8 md:gap-12 row-span-2">
                     <div class="md:scale-100 scale-50 neo_shadow h-full p-12 col-span-5 flex flex-col justify-between border border-red-600">
                         <span class="text-2xl font-[poppins]">
                             Uwaga! W dniach 6-7.03.2024 zostanie przebudowana sieć wodociągowa w związku z czym woda zostanie wyłączona w godzinach 9-16.
@@ -162,7 +162,6 @@ switch ($dzienTygodnia) {
                     </div>
                     <div class="neo_shadow h-full p-12 col-span-3 flex flex-col justify-between ">
                         <div class="text-sm font-[poppins]">
-                            <!-- Uwaga! W dniach 6-7.03.2024 zostanie przebudowana sieć wodociągowa w związku z czym woda zostanie wyłączona w godzinach 9-16. -->
                             <span class="font-medium">Numery ratunkowe:</span>
                             <br/><br/>
                             999 Pogotowie
@@ -189,8 +188,8 @@ switch ($dzienTygodnia) {
                             
                         </div>
                     </div>
-                </div>
-                <div class="w-full h-full grid grid-cols-12 gap-12 row-span-3 mt-4">
+                </div> -->
+                <!-- <div class="w-full h-full grid grid-cols-12 gap-12 row-span-3 mt-4">
                     <div class="neo_shadow h-full p-12 col-span-4 flex flex-col justify-between">
                         <span class="text-xs flex gap-2 items-center">przypięte
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.3" stroke="currentColor" class="w-3.5 h-3.5">
@@ -212,9 +211,9 @@ switch ($dzienTygodnia) {
                                     <span class="text-gray-500 text-sm -mt-2">Administrator lokalny</span>
                                 </div>
                             </div>
-                            <!-- <div class="flex flex-col items-end">
+                             <div class="flex flex-col items-end">
                                 <span class="text-sm text-red-600">Wyłączenie</span>
-                            </div> -->
+                            </div> 
                         </div>
                     </div>
                     <div class="neo_shadow h-full p-12 col-span-8 flex flex-col justify-between">
@@ -238,7 +237,7 @@ switch ($dzienTygodnia) {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div id="refresh_body" class="duration-300 w-full h-full grid grid-cols-12 gap-12 row-span-3">
                     
                 </div>
