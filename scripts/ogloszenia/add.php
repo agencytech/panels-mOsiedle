@@ -16,6 +16,7 @@ $author_id = $_SESSION['user_id'];
 if ($text != "" && $importance != "") {
     include "../conn_db.php";
     $sql = "INSERT INTO announcements (title, text, created_at, expire_at, importance, communities, icon, author_id) VALUES ('$title', '$text', '$created_at', '$expire_at', $importance, $wspolnota_id, '$icon', $author_id);";
+    echo $sql;
     if (mysqli_query($conn, $sql)) {
         //log
         $before = '';

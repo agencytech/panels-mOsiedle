@@ -12,7 +12,7 @@
     <div class="w-full">
         <label for="title" class="ml-px block pl-2 text-sm font-medium leading-6 text-gray-900">Tytuł</label>
         <div class="mt-2">
-            <input name="title" id="title" type="text" value="" placeholder="Wpisz tytuł" class="border rounded-full w-full py-1.5 px-4 text-sm border-gray-400 focus:ring-0 focus:outline-0 focus:bg-[#1c1c1c] focus:border-[#1c1c1c] focus:shadow-xl duration-150 font-medium focus:text-white">
+            <input name="title" id="title" type="text" value="" placeholder="Wpisz tytuł" class="border rounded-full w-full py-1.5 px-4 text-sm border-gray-400 focus:ring-0 focus:outline-0 focus:bg-[#1c1c1c] focus:border-[#1c1c1c] focus:shadow-xl duration-150 font-medium focus:text-white" required>
         </div>
     </div>
     </div>
@@ -20,9 +20,11 @@
     <div class="mt-4 flex md:flex-row flex-col gap-2">
     <div class="w-full">
         <label for="text" class="ml-px block pl-2 text-sm font-medium leading-6 text-gray-900">Treść (obowiązkowe)</label>
-        <div class="mt-2">
+        <!-- <div class="mt-2">
             <textarea name="text" id="text" placeholder="Wpisz treść" rows=5 class="border rounded-2xl py-1.5 w-full px-4 text-sm border-gray-400 focus:ring-0 focus:outline-0 focus:bg-[#1c1c1c] focus:border-[#1c1c1c] focus:shadow-xl duration-150 font-medium focus:text-white" required></textarea>
-        </div>
+        </div> -->
+        <div style="height: auto; " class=" max-h-[45vh] text-gray-900 rounded-xl" id="editor-container-popup"></div>
+        <input type="hidden" id="text" name="text" value='' required>
     </div>
     </div>
 
@@ -57,3 +59,38 @@
         <button onclick="popupOgloszeniaAddCloseConfirm()" type="button" class="active:scale-95 duration-150 mt-3 inline-flex w-full justify-center rounded-full px-4 py-2 text-sm font-medium text-gray-900 shadow-sm ring-inset ring-1 ring-[#3d3d3d] hover:ring-gray-500 hover:bg-gray-500 hover:text-white hover:shadow-xl duration-150 sm:mt-0 sm:w-auto">Nie zapisuj</button>
     </div>
 </form>
+
+<script>
+  var quill = new Quill('#editor-container-popup', {
+    theme: 'snow',
+    placeholder: 'Tu wpisz treść...',
+    modules: {
+      toolbar: [
+        [{ 'size': [ 'small', false, 'large', 'huge'] }],
+        ['bold', 'italic', 'underline', 'strike'],  // Funkcje pogrubiania, kursywy, podkreślenia, przekreślenia
+        // Dodaj niestandardową paletę kolorów
+        ['link'],
+        ['blockquote'],
+        ['code'],
+        [{ 'align': ['', 'center', 'right', 'justify'] }],
+        [{ 'color': [false, 'var(--text)', '#ffffff', 'rgb(243 244 246)', 'rgb(229 231 235)', 'rgb(209 213 219)', 'rgb(156 163 175)', 'rgb(107 114 128)', 'rgb(75 85 99)', 'rgb(55 65 81)', 'rgb(31 41 55)', 'rgb(17 24 39)', 'rgb(3 7 18)', 'black'] }],
+        // Inne opcje
+        
+      ],
+    },
+  });
+
+
+  // Dodaj event listener do śledzenia zmian w treści
+  quill.on('text-change', function(delta, oldDelta, source) {
+    // Zaktualizuj ukryte pole lub wykonaj inne operacje po zmianie treści
+    updateHiddenField();
+  });
+
+  // Funkcja aktualizująca ukryte pole
+  function updateHiddenField() {
+    var editorContent = document.getElementById('text');
+    editorContent.value = quill.root.innerHTML;
+  }
+
+</script>
